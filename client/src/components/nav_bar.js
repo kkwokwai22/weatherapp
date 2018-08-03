@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './nav_bar.css';
-import SideNav from './side_nav';
+import './Nav_bar.css';
+import SideNav from './Side_nav';
 
 class NavBar extends Component {
 	constructor(props) {

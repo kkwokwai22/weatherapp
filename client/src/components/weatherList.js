@@ -1,5 +1,5 @@
 import React from 'react';
-import WeatherListItem from './weatherListItem';
+import WeatherListItem from './WeatherListItem';
 
 const WeatherList = props => {
 	const weatherData = props.cityData;

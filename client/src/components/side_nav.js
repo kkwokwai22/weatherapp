@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './nav_bar.css';
-import SearchBar from './searchBar';
+import './Nav_bar.css';
+import SearchBar from './SearchBar';
 import axios from 'axios';
 
 class SideNav extends Component {

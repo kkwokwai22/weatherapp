@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
-import WeatherList from './components/weatherList';
+import WeatherList from './components/WeatherList';
 import NavBar from './components/nav_bar';
 
 class App extends Component {
