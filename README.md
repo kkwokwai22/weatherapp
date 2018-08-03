@@ -1,7 +1,7 @@
 # Weather app 
 
 ## App Info
-Basically the project is fetching the API from https://www.metaweather.com  
+Basically the project is fetching the API from https://www.metaweather.com the cilent side is React and the server side is node.js(express)
 
 ## Quick Start
 
