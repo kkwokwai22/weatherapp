@@ -27,12 +27,14 @@ class NavBar extends Component {
 	render() {
 		const { showNavBar } = this.state;
 		return (
-			<div class="navburger" onClick={this.openNav}>
-				<div class="bar1" />
-				<div class="bar2" />
-				<div class="bar3" />
-				{showNavBar ? <SideNav openNav={this.openNav} /> : null}
-			</div>
+			<React.Fragment>
+				<div class="navburger" onClick={this.openNav}>
+					<div class="bar1" />
+					<div class="bar2" />
+					<div class="bar3" />
+				</div>
+				{showNavBar ? <SideNav closingNavBar={this.openNav} /> : null}
+			</React.Fragment>
 		);
 	}
 }

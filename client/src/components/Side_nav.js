@@ -4,14 +4,24 @@ import SearchBar from './SearchBar';
 import axios from 'axios';
 
 class SideNav extends Component {
-  closeNav() {}
+  constructor(props) {
+    super(props);
+    this.state = {
+      closeNavBar: true
+    };
+    this.closeNav = this.closeNav.bind(this);
+  }
+
+  closeNav() {
+    this.props.closingNavBar();
+  }
 
   render() {
     return (
       <div id="mySidenav" class="sidenav">
         <div class="select-city">
           <h2>Select a City</h2>
-          <a href="javascript:void(0)" class="closebtn" onClick={this.closeNav.bind(this)}>
+          <a href="javascript:void(0)" class="closebtn" onClick={this.closeNav}>
             &times;
           </a>
         </div>
