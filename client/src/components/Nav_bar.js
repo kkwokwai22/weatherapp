@@ -17,10 +17,12 @@ class NavBar extends Component {
 			this.setState({
 				showNavBar: true
 			});
+			document.querySelector('#navburger').style.opacity = '0';
 		} else {
 			this.setState({
 				showNavBar: false
 			});
+			document.querySelector('#navburger').style.opacity = '1';
 		}
 	}
 
@@ -28,7 +30,7 @@ class NavBar extends Component {
 		const { showNavBar } = this.state;
 		return (
 			<React.Fragment>
-				<div class="navburger" onClick={this.openNav}>
+				<div id="navburger" class="navburger" onClick={this.openNav}>
 					<div class="bar1" />
 					<div class="bar2" />
 					<div class="bar3" />
