@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import WeatherList from './components/WeatherList';
-import NavBar from './components/nav_bar';
+import NavBar from './components/Nav_bar';
 
 class App extends Component {
   constructor(props) {
