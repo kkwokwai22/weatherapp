@@ -4,18 +4,7 @@ import SearchBar from './SearchBar';
 import axios from 'axios';
 
 class SideNav extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sideNavSize: '0px'
-    };
-  }
-
-  closeNav() {
-    console.log(this.state.sideNavSize);
-    console.log(this.props.openNav);
-    this.props.openNav(this.state.sizeNavSize);
-  }
+  closeNav() {}
 
   render() {
     return (
