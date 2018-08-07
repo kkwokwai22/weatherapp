@@ -14,7 +14,7 @@ class App extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     axios
       .get(`/api/weather`)
       .then(response => {
