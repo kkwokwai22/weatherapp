@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Nav_bar.css';
-import SideNav from './Side_nav';
+import SideNav from '../navbar/Side_nav';
 
 class NavBar extends Component {
 	constructor(props) {
@@ -30,10 +30,10 @@ class NavBar extends Component {
 		const { showNavBar } = this.state;
 		return (
 			<React.Fragment>
-				<div id="navburger" class="navburger" onClick={this.openNav}>
-					<div class="bar1" />
-					<div class="bar2" />
-					<div class="bar3" />
+				<div id="navburger" className="navburger" onClick={this.openNav}>
+					<div className="bar1" />
+					<div className="bar2" />
+					<div className="bar3" />
 				</div>
 				{showNavBar ? <SideNav closingNavBar={this.openNav} /> : null}
 			</React.Fragment>

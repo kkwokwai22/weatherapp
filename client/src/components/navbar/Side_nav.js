@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Nav_bar.css';
+import '../layout/Nav_bar.css';
 import SearchBar from './SearchBar';
 import axios from 'axios';
 
@@ -19,7 +19,7 @@ class SideNav extends Component {
   render() {
     return (
       <div id="mySidenav" class="sidenav">
-        <div class="select-city">
+        <div className="select-city">
           <h2>Select a City</h2>
           <a href="javascript:void(0)" class="closebtn" onClick={this.closeNav}>
             &times;

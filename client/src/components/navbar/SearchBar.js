@@ -15,18 +15,18 @@ class SearchBar extends Component {
     });
   }
 
-  searchWeather() {
-    axios
-      .get('/api/weather', {
-        search: this.state.term
-      })
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
+  searchWeather = () => {
+    // axios
+    //   .get('/api/weather', {
+    //     search: this.state.term
+    //   })
+    //   .then(response => {
+    //     console.log(response);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
+  };
 
   render() {
     return (

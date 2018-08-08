@@ -11,27 +11,27 @@ const WeatherListItem = props => {
 	}
 	function imageForWeather(abbr) {
 		if (abbr === 'sn') {
-			return <i class="wi wi-day-snow" />;
+			return <i className="wi wi-day-snow" />;
 		} else if (abbr === 'sl') {
-			return <i class="wi wi-night-alt-sleet" />;
+			return <i className="wi wi-night-alt-sleet" />;
 		} else if (abbr === 'h') {
-			return <i class="wi wi-night-hail" />;
+			return <i className="wi wi-night-hail" />;
 		} else if (abbr === 't') {
-			return <i class="wi wi-thunderstorm" />;
+			return <i className="wi wi-thunderstorm" />;
 		} else if (abbr === 'hr') {
-			return <i class="wi wi-rain" />;
+			return <i className="wi wi-rain" />;
 		} else if (abbr === 'lr') {
-			return <i class="wi wi-rain" />;
+			return <i className="wi wi-rain" />;
 		} else if (abbr === 's') {
-			return <i class="wi wi-showers" />;
+			return <i className="wi wi-showers" />;
 		} else if (abbr === 'hc') {
-			return <i class="wi wi-cloudy" />;
+			return <i className="wi wi-cloudy" />;
 		} else if (abbr === 'lc') {
-			return <i class="wi wi-cloud" />;
+			return <i className="wi wi-cloud" />;
 		} else if (abbr === 'c') {
-			return <i class="wi wi-day-sunny" />;
+			return <i className="wi wi-day-sunny" />;
 		} else {
-			return <i class="wi wi-day-sunny" />;
+			return <i className="wi wi-day-sunny" />;
 		}
 	}
 	return (
