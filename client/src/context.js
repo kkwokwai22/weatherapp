@@ -28,6 +28,7 @@ export class Provider extends Component {
 				let cityData = { cityData: response.data.consolidated_weather };
 				this.setState(cityName);
 				this.setState(cityData);
+				console.log(this.state);
 			})
 			.catch(error => {
 				console.log(error);
@@ -39,4 +40,4 @@ export class Provider extends Component {
 	}
 }
 
-export const WeatherInfo = Context.WeatherInfo;
+export const Consumer = Context.Consumer;
