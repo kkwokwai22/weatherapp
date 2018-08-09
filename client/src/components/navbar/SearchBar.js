@@ -1,39 +1,59 @@
 import React, { Component } from 'react';
+import { Consumer } from '../../context';
 import axios from 'axios';
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      term: 'New York'
+      term: ''
     };
   }
 
-  onInputChange(term) {
+  onInputChange = event => {
     this.setState({
-      term: term
+      term: event.target.value
     });
-  }
+  };
 
-  searchWeather = () => {
-    // axios
-    //   .get('/api/weather', {
-    //     search: this.state.term
-    //   })
-    //   .then(response => {
-    //     console.log(response);
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   });
+  onFormSubmit = (dispatch, event) => {
+    event.preventDefault();
+    const city = {
+      city: this.state.term
+    };
+    axios
+      .post('/api/weather', city)
+      .then(response =>
+        dispatch({
+          type: 'SEARCH_WEATHER',
+          payload: {
+            cityName: response.data.parent.title,
+            cityData: response.data.consolidated_weather
+          }
+        })
+      )
+      .catch(error => {
+        console.log(error);
+      });
+
+    this.setState({
+      term: ''
+    });
   };
 
   render() {
     return (
-      <div>
-        <input value={this.state.term} onChange={event => this.onInputChange(event.target.value)} />;
-        <button onClick={() => this.searchWeather()}>Search</button>
-      </div>
+      <Consumer>
+        {value => {
+          const { dispatch } = value;
+          return (
+            <form onSubmit={this.onFormSubmit.bind(this, dispatch)}>
+              <input value={this.state.term} onChange={this.onInputChange} placeholder="Select City" />
+              <button type="submit">Search</button>
+            </form>
+          );
+        }}
+      </Consumer>
     );
   }
 }

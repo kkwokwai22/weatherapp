@@ -2,7 +2,15 @@ import React, { Component } from 'react';
 import axios from 'axios';
 const Context = React.createContext();
 const reducer = (state, action) => {
+	console.log(action.type);
+	console.log(action.payload);
 	switch (action.type) {
+		case 'SEARCH_WEATHER':
+			return {
+				...state,
+				cityName: action.payload.cityName,
+				cityData: action.payload.cityData
+			};
 		default:
 			return state;
 	}
@@ -28,7 +36,6 @@ export class Provider extends Component {
 				let cityData = { cityData: response.data.consolidated_weather };
 				this.setState(cityName);
 				this.setState(cityData);
-				console.log(this.state);
 			})
 			.catch(error => {
 				console.log(error);

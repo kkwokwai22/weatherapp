@@ -21,6 +21,21 @@ app.use(function(req, res, next) {
 	next();
 });
 
+app.post('/api/weather', (req, res) => {
+	const cityInfo = req.body.city;
+	const URL = `https://www.metaweather.com/api/location/search/?query=${cityInfo}`;
+	axios
+		.get(URL)
+		.then(response => {
+			let cityID = response.data[0].woeid;
+			return axios.get(`https://www.metaweather.com/api/location/${cityID}`);
+		})
+		.then(response => {
+			let data = response.data;
+			res.json(data);
+		});
+});
+
 app.get('/api/weather', (req, res) => {
 	axios
 		.get('https://www.metaweather.com/api/location/search/?query=New York')
@@ -30,11 +45,9 @@ app.get('/api/weather', (req, res) => {
 		})
 		.then(response => {
 			let data = response.data;
-			res.json(response.data);
+			res.json(data);
 		});
 });
-
-app.post('/api/');
 
 const port = 5000;
 
