@@ -1,0 +1,32 @@
+.themebox-container {
+	display: flex;
+	width: 200px;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+.themeColorBox {
+	width: 80px;
+	height: 50px;
+}
+
+.themebox-container li:first-child {
+	border: 0px solid red;
+	border-top-left-radius: 25px;
+}
+
+.themebox-container li:nth-child(3) {
+	border: 0px solid green;
+	border-top-right-radius: 25px;
+}
+
+.themebox-container li:nth-child(7) {
+	border: 0px solid pink;
+	border-bottom-left-radius: 25px;
+}
+
+.themebox-container li:nth-child(9) {
+	border: 0px solid blueviolet;
+	border-bottom-right-radius: 25px;
+}

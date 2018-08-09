@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Consumer } from '../../context';
+import './Side.nav.css';
 import axios from 'axios';
 
 class SearchBar extends Component {
@@ -23,15 +24,16 @@ class SearchBar extends Component {
     };
     axios
       .post('/api/weather', city)
-      .then(response =>
+      .then(response => {
+        response.data.consolidated_weather.pop();
         dispatch({
           type: 'SEARCH_WEATHER',
           payload: {
             cityName: response.data.parent.title,
             cityData: response.data.consolidated_weather
           }
-        })
-      )
+        });
+      })
       .catch(error => {
         console.log(error);
       });
@@ -49,7 +51,6 @@ class SearchBar extends Component {
           return (
             <form onSubmit={this.onFormSubmit.bind(this, dispatch)}>
               <input value={this.state.term} onChange={this.onInputChange} placeholder="Select City" />
-              <button type="submit">Search</button>
             </form>
           );
         }}

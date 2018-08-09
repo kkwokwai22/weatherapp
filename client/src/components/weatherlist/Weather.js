@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import WeatherList from './WeatherList';
 import { Consumer } from '../../context';
 

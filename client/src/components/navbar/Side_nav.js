@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../layout/Nav_bar.css';
 import SearchBar from './SearchBar';
-import axios from 'axios';
+import Theme from './Theme';
+import './Side.nav.css';
 
 class SideNav extends Component {
   constructor(props) {
@@ -18,15 +18,18 @@ class SideNav extends Component {
 
   render() {
     return (
-      <div id="mySidenav" class="sidenav">
-        <div className="select-city">
-          <h2>Select a City</h2>
-          <a href="javascript:void(0)" class="closebtn" onClick={this.closeNav}>
-            &times;
-          </a>
+      <div id="mySidenav" className="sidenav">
+        <div className="container-city-theme">
+          <div className="select-city">
+            <h2>Select a City</h2>
+            <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>
+              &times;
+            </a>
+          </div>
+          <SearchBar />
+          <h2>Theme</h2>
+          <Theme />
         </div>
-        <SearchBar />
-        <h2>Theme</h2>
       </div>
     );
   }

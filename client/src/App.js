@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from './context';
 import Weather from './components/weatherlist/Weather';
 import NavBar from './components/layout/Nav_bar';
